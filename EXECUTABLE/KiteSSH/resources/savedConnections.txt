@@ -1,0 +1,15 @@
+capa.its.uow.edu.au:mrk792:22:
+11.10.11.1:kali:22
+24.24.24.1:root:4456
+192.168.1.6:pi:22
+email.www.mega.corp:bill:161
+api.facebook.com:user1167:135
+192.18.1.7:mauri:22
+169.254.147.0:test:1024
+22.66.4.77:os86:110
+192.168.1.10:fdf:1024
+myphpadmin.tlhsa.com:admin:80
+xampp.bewindows.com:editor:80
+localhost:mauri:44576
+66.56.1.2:kali1:22
+ovpn.hallow.net:hero:8888

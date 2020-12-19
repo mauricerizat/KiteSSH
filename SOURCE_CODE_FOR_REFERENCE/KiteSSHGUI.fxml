@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+<?scenebuilder-stylesheet @../applicationCSS.css?>
+
+<AnchorPane prefHeight="534.0" prefWidth="914.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="KiteSSHGUI.KiteSSHGUIController">
+   <children>
+    <AnchorPane id="AnchorPane" fx:id="baseAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="526.0" prefWidth="906.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="4.0">
+        <children>
+          <TextFlow layoutX="231.0" prefHeight="55.0" prefWidth="98.0" style="-fx-background-color: #FFFFFF;" />
+          <FlowPane fx:id="topMenu" alignment="CENTER_RIGHT" layoutX="234.0" prefHeight="55.0" prefWidth="566.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #666666;" AnchorPane.leftAnchor="234.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+             <children>
+                  <Button fx:id="serverStartBtn" graphicTextGap="0.0" layoutX="267.0" layoutY="24.0" maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" onMousePressed="#handleMenuButtonAction" style="-fx-background-color: #FFFFFF; -fx-background-radius: 32px; -fx-border-color: #606060; -fx-font-family: calibri; -fx-font-size: 18; -fx-font-weight: bold; -fx-padding: 2; -fx-border-radius: 32px;" text="Start Server" textAlignment="CENTER">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <graphic>
+                        <ImageView scaleX="0.6" scaleY="0.6">
+                           <image>
+                              <Image url="@../pngwing.com.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                <TextField depthTest="DISABLE" editable="false" focusTraversable="false" mouseTransparent="true" prefHeight="42.0" prefWidth="107.0" style="-fx-font-family: Calibri; -fx-font-size: 18; -fx-background-color: transparent; -fx-font-weight: bold;" text="Connection:">
+                   <padding>
+                      <Insets left="5.0" />
+                   </padding>
+                </TextField>
+                <!--Add button-->
+                 <Button fx:id="addBtn" graphicTextGap="0.0" maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" onMousePressed="#handleMenuButtonAction" style="-fx-background-color: #FFFFFF; -fx-background-radius: 32px; -fx-border-color: #606060; -fx-font-family: calibri; -fx-font-size: 18; -fx-font-weight: bold; -fx-padding: 2; -fx-border-radius: 32px;" text="Add" textAlignment="CENTER">
+                   <opaqueInsets>
+                      <Insets />
+                   </opaqueInsets>
+                   <FlowPane.margin>
+                      <Insets bottom="5.0" left="4.0" right="4.0" top="5.0" />
+                   </FlowPane.margin>
+                   <graphic>
+                       <ImageView scaleX="0.6" scaleY="0.6">
+                           <image>
+                               <Image url="@../pngwing.com.png" />
+                           </image>
+                       </ImageView>
+                   </graphic>
+                </Button>
+                <!--Delete button-->
+                <Button fx:id="deleteBtn" graphicTextGap="0.0" maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" onAction="#deleteConnection" onMousePressed="#handleMenuButtonAction" style="-fx-background-color: #FFFFFF; -fx-background-radius: 32px; -fx-border-color: #606060; -fx-font-family: calibri; -fx-font-size: 18; -fx-font-weight: bold; -fx-padding: 2; -fx-border-radius: 32px;" text="Delete" textAlignment="CENTER">
+                   <FlowPane.margin>
+                      <Insets bottom="5.0" left="4.0" right="4.0" top="5.0" />
+                   </FlowPane.margin>
+                   <graphic>
+                       <ImageView scaleX="0.6" scaleY="0.6">
+                           <image>
+                               <Image url="@../Icon2.png" />
+                           </image>
+                       </ImageView>
+                   </graphic>
+                   <opaqueInsets>
+                      <Insets />
+                   </opaqueInsets>
+                </Button>
+                <!--Edit button -->
+                <Button fx:id="editBtn" graphicTextGap="0.0" maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" onAction="#editConnection" onMouseClicked="#handleMenuButtonAction" onMousePressed="#handleMenuButtonAction" style="-fx-background-color: #FFFFFF; -fx-background-radius: 32px; -fx-border-color: #606060; -fx-font-family: calibri; -fx-font-size: 18; -fx-font-weight: bold; -fx-padding: 2; -fx-border-radius: 32px;" text="Edit" textAlignment="CENTER">
+                   <FlowPane.margin>
+                      <Insets bottom="5.0" left="4.0" right="4.0" top="5.0" />
+                   </FlowPane.margin>
+                   <graphic>
+                       <ImageView scaleX="0.6" scaleY="0.6">
+                           <image>
+                               <Image url="@../Icon3.png" />
+                           </image>
+                       </ImageView>
+                   </graphic>
+                </Button>
+                <!--minimize Button-->
+                <Button fx:id="minimizeBtn" graphicTextGap="0.0" maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" onMouseClicked="#handleMinimizeButton" onMousePressed="#handleMinimizeButton" style="-fx-background-color: #FFFFFF; -fx-background-radius: 32px; -fx-border-color: #606060; -fx-padding: 0; -fx-border-radius: 32px;">
+                         <graphic>
+                            <ImageView scaleX="0.6" scaleY="0.6">
+                               <image>
+                                  <Image url="@../minimize.png" />
+                               </image>
+                            </ImageView>
+                         </graphic>
+                         <FlowPane.margin>
+                            <Insets bottom="5.0" left="4.0" right="4.0" top="5.0" />
+                         </FlowPane.margin>
+                      </Button>
+                      <Button fx:id="resizeAppBtn" graphicTextGap="0.0" maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" onMouseClicked="#handleResizeAppButton" onMousePressed="#handleResizeAppButton" style="-fx-background-color: #FFFFFF; -fx-background-radius: 32px; -fx-border-color: #606060; -fx-padding: 0; -fx-border-radius: 32px;">
+                         <graphic>
+                            <ImageView scaleX="0.6" scaleY="0.6">
+                               <image>
+                                  <Image url="@../maximize.png" />
+                               </image>
+                            </ImageView>
+                         </graphic>
+                         <FlowPane.margin>
+                            <Insets bottom="5.0" left="4.0" right="4.0" top="5.0" />
+                         </FlowPane.margin>
+                      </Button>
+
+                <!--Close button-->
+                <Button alignment="CENTER_RIGHT" graphicTextGap="0.0" maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" onAction="#handleCloseApp" style="-fx-background-color: #FFFFFF; -fx-background-radius: 32px; -fx-border-color: #606060; -fx-font-family: calibri; -fx-font-size: 16; -fx-font-weight: bold; -fx-padding: 0; -fx-border-radius: 32px;" textAlignment="CENTER">
+                   <FlowPane.margin>
+                      <Insets bottom="5.0" left="4.0" right="4.0" top="5.0" />
+                   </FlowPane.margin>
+                   <graphic>
+                       <ImageView scaleX="0.6" scaleY="0.6">
+                           <image>
+                               <Image url="@../Icon5.png" />
+                           </image>
+                       </ImageView>
+                   </graphic>
+                </Button>
+             </children>
+             <opaqueInsets>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+             </opaqueInsets>
+             <padding>
+                <Insets top="8.0" />
+             </padding></FlowPane>
+          <TextField fx:id="t_txtField_BelowLogo" layoutY="55.0" prefHeight="42.0" prefWidth="234.0" style="-fx-background-color: #b3b3e6; -fx-border-color: #666666;" AnchorPane.leftAnchor="0.0" />
+          <TextFlow layoutY="55.0" prefHeight="42.0" prefWidth="234.0" style="-fx-background-color: #b3b3e6; -fx-border-color: #666666;" visible="false" AnchorPane.leftAnchor="0.0" />
+          <TextFlow fx:id="actionBar" layoutX="234.0" layoutY="55.0" prefHeight="42.0" prefWidth="566.0" style="-fx-background-color: #b3b3e6; -fx-border-color: #666666;" AnchorPane.leftAnchor="234.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="55.0">
+             <children>
+                <TextField fx:id="pageDescription" editable="false" focusTraversable="false" mouseTransparent="true" prefHeight="32.0" prefWidth="337.0" style="-fx-font-family: calibri; -fx-font-size: 18; -fx-background-color: transparent; -fx-font-weight: bold;" text="Home">
+                   <opaqueInsets>
+                      <Insets />
+                   </opaqueInsets>
+                   <padding>
+                      <Insets left="15.0" top="10.0" />
+                   </padding>
+                </TextField>
+             </children></TextFlow>
+          <GridPane fx:id="logoGrid" prefHeight="55.0" prefWidth="234.0" style="-fx-border-color: #666666;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <columnConstraints>
+              <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="143.0" />
+              <ColumnConstraints hgrow="SOMETIMES" maxWidth="111.0" minWidth="10.0" prefWidth="91.0" />
+            </columnConstraints>
+            <rowConstraints>
+              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+             <children>
+                <TextField alignment="CENTER_RIGHT" editable="false" focusTraversable="false" mouseTransparent="true" prefHeight="29.0" prefWidth="92.0" style="-fx-font-size: 22; -fx-font-weight: bold; -fx-padding: 0; -fx-background-color: transparent;" text="KiteSSH" GridPane.rowIndex="1" />
+                <ImageView fitHeight="45.0" fitWidth="31.0" mouseTransparent="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                   <image>
+                      <Image url="@../kiteSSH.png" />
+                   </image>
+                   <GridPane.margin>
+                      <Insets left="12.0" />
+                   </GridPane.margin>
+                </ImageView>
+             </children>
+          </GridPane>
+          
+          <AnchorPane fx:id="a_home" layoutX="234.0" layoutY="96.0" prefHeight="428.0" prefWidth="566.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="234.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="98.0">
+             <children>
+                <TextFlow prefHeight="428.0" prefWidth="566.0" style="-fx-background-color: #cce6ff; -fx-border-color: #666666;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                <TextArea editable="false" focusTraversable="false" layoutX="138.0" layoutY="106.0" mouseTransparent="true" prefHeight="205.0" prefWidth="423.0" style="-fx-font-size: 15; -fx-background-color: #cce6ff;" stylesheets="@applicationCSS.css" text="Welcome to KiteSSH.&#10;&#10;To add a new connection, click on&#10;&#10;To delete an existing connection, click on&#10;&#10;To edit a connection, click on&#10;&#10;To close KiteSSH, click on " />
+                <ImageView fitHeight="428.0" fitWidth="301.0" layoutX="155.0" style="-fx-opacity: 0.3;">
+                   <image>
+                      <Image url="@../kiteSSH.png" />
+                   </image>
+                </ImageView>
+                <Button graphicTextGap="0.0" layoutX="379.0" layoutY="137.0" maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" style="-fx-background-color: #FFFFFF; -fx-background-radius: 32px; -fx-border-color: #606060; -fx-font-family: calibri; -fx-font-size: 18; -fx-font-weight: bold; -fx-padding: 2; -fx-border-radius: 32px;" text="Add" textAlignment="CENTER">
+                   <opaqueInsets>
+                      <Insets />
+                   </opaqueInsets>
+                   <graphic>
+                      <ImageView scaleX="0.6" scaleY="0.6">
+                         <image>
+                            <Image url="@../pngwing.com.png" />
+                         </image>
+                      </ImageView>
+                   </graphic>
+                </Button>
+                <Button graphicTextGap="0.0" layoutX="427.0" layoutY="179.0" maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" style="-fx-background-color: #FFFFFF; -fx-background-radius: 32px; -fx-border-color: #606060; -fx-font-family: calibri; -fx-font-size: 18; -fx-font-weight: bold; -fx-padding: 2; -fx-border-radius: 32px;" text="Delete" textAlignment="CENTER">
+                   <graphic>
+                      <ImageView scaleX="0.6" scaleY="0.6">
+                         <image>
+                            <Image url="@../Icon2.png" />
+                         </image>
+                      </ImageView>
+                   </graphic>
+                   <opaqueInsets>
+                      <Insets />
+                   </opaqueInsets>
+                </Button>
+                <Button graphicTextGap="0.0" layoutX="350.0" layoutY="222.0" maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" style="-fx-background-color: #FFFFFF; -fx-background-radius: 32px; -fx-border-color: #606060; -fx-font-family: calibri; -fx-font-size: 18; -fx-font-weight: bold; -fx-padding: 2; -fx-border-radius: 32px;" text="Edit" textAlignment="CENTER">
+                   <graphic>
+                      <ImageView scaleX="0.6" scaleY="0.6">
+                         <image>
+                            <Image url="@../Icon3.png" />
+                         </image>
+                      </ImageView>
+                   </graphic>
+                </Button>
+                <Button graphicTextGap="0.0" layoutX="322.0" layoutY="266.0" maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" style="-fx-background-color: #FFFFFF; -fx-background-radius: 32px; -fx-border-color: #606060; -fx-font-family: calibri; -fx-font-size: 16; -fx-font-weight: bold; -fx-padding: 0; -fx-border-radius: 32px;" textAlignment="CENTER">
+                   <graphic>
+                      <ImageView scaleX="0.6" scaleY="0.6">
+                         <image>
+                            <Image url="@../Icon5.png" />
+                         </image>
+                      </ImageView>
+                   </graphic>
+                </Button>
+             </children>
+          </AnchorPane>
+          <ScrollPane hbarPolicy="NEVER" layoutY="98.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="98.0">
+             <content>
+                <VBox fx:id="connectionList" prefHeight="428.0" prefWidth="234.0" style="-fx-background-color: #E0E0E0; -fx-border-color: #666666;">
+                   <children>
+                      <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="238.0" style="-fx-background-color: #6666ff; -fx-border-color: #666666;" text="Connection1" />
+                      <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="238.0" style="-fx-background-color: #00e6e6; -fx-border-color: #666666;" text="Connection2" />
+                      <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="238.0" style="-fx-background-color: #00e6e6; -fx-border-color: #666666;" text="Connection3" />
+                      <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="238.0" style="-fx-background-color: #00e6e6; -fx-border-color: #666666;" text="Connection4" />
+                      <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="238.0" style="-fx-background-color: #00e6e6; -fx-border-color: #666666;" text="Connection5" />
+                   </children>
+                </VBox>
+             </content>
+          </ScrollPane>
+          <AnchorPane fx:id="a_scpControl" layoutX="234.0" layoutY="98.0" prefHeight="428.0" prefWidth="566.0" style="-fx-background-color: #cce6ff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="234.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="98.0">
+             <children>
+                <Button fx:id="sftpTransferButton1" disable="true" layoutX="428.0" layoutY="399.0" mnemonicParsing="false" onAction="#sftpTransfer" prefHeight="27.0" prefWidth="131.0" text="SFTP Transfer" visible="false" />
+                <ComboBox fx:id="scpTransferType" layoutX="121.0" layoutY="44.0" prefWidth="150.0" />
+                <Label layoutX="14.0" layoutY="44.0" prefHeight="25.0" prefWidth="88.0" text="SCP Type:">
+                   <font>
+                      <Font name="Calibri" size="20.0" />
+                   </font>
+                </Label>
+                <Label layoutX="14.0" layoutY="92.0" prefHeight="25.0" prefWidth="88.0" text="Local File:">
+                   <font>
+                      <Font name="Calibri Bold" size="20.0" />
+                   </font>
+                </Label>
+                <TextField fx:id="scpLocalFilePath" editable="false" layoutX="136.0" layoutY="124.0" prefHeight="37.0" prefWidth="413.0">
+                   <font>
+                      <Font name="Calibri" size="20.0" />
+                   </font>
+                </TextField>
+                <Button layoutX="407.0" layoutY="169.0" mnemonicParsing="false" onAction="#chooseSCPLocalDirectory" prefHeight="22.0" prefWidth="142.0" text="Choose Directory">
+                   <font>
+                      <Font name="Calibri" size="16.0" />
+                   </font>
+                </Button>
+                <Label layoutX="14.0" layoutY="214.0" prefHeight="25.0" prefWidth="107.0" text="Remote File:">
+                   <font>
+                      <Font name="Calibri Bold" size="20.0" />
+                   </font>
+                </Label>
+                <TextField fx:id="scpRemoteFilePath" layoutX="136.0" layoutY="248.0" prefHeight="37.0" prefWidth="413.0">
+                   <font>
+                      <Font name="Calibri" size="20.0" />
+                   </font>
+                </TextField>
+                <Button layoutX="121.0" layoutY="341.0" mnemonicParsing="false" onAction="#performSCPTransfer" prefHeight="37.0" prefWidth="186.0" text="START TRANSFER">
+                   <font>
+                      <Font name="Calibri" size="20.0" />
+                   </font>
+                </Button>
+                <Button layoutX="316.0" layoutY="341.0" mnemonicParsing="false" onAction="#terminateConnection" prefHeight="37.0" prefWidth="186.0" text="END CONNECTION">
+                   <font>
+                      <Font name="Calibri" size="20.0" />
+                   </font>
+                </Button>
+                <Label layoutX="14.0" layoutY="130.0" prefHeight="25.0" prefWidth="121.0" text="File Directory:">
+                   <font>
+                      <Font name="Calibri" size="20.0" />
+                   </font>
+                </Label>
+                <TextField fx:id="scpLocalFileName" layoutX="136.0" layoutY="166.0" prefHeight="37.0" prefWidth="252.0">
+                   <font>
+                      <Font name="Calibri" size="20.0" />
+                   </font>
+                </TextField>
+                <Label layoutX="14.0" layoutY="172.0" prefHeight="25.0" prefWidth="121.0" text="File Name:">
+                   <font>
+                      <Font name="Calibri" size="20.0" />
+                   </font>
+                </Label>
+                <Label layoutX="14.0" layoutY="254.0" prefHeight="25.0" prefWidth="121.0" text="File Directory:">
+                   <font>
+                      <Font name="Calibri" size="20.0" />
+                   </font>
+                </Label>
+             </children>
+          </AnchorPane>
+          <AnchorPane fx:id="a_add" layoutX="234.0" layoutY="96.0" prefHeight="428.0" prefWidth="566.0" style="-fx-background-color: #cce6ff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="234.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="98.0">
+             <children>
+                <TextField editable="false" focusTraversable="false" layoutX="27.0" layoutY="19.0" prefHeight="22.0" prefWidth="142.0" style="-fx-font-weight: bold; -fx-font-family: calibri; -fx-padding: 0; -fx-background-color: transparent; -fx-font-size: 19px;" text="Connection Type:" />
+                <ComboBox fx:id="add_cType" layoutX="173.0" layoutY="14.0" minHeight="30.0" onAction="#detectP2PSelect" prefHeight="30.0" prefWidth="186.0" promptText="Please Choose..." style="-fx-background-color: #FFFFFF; -fx-border-color: #AAAAAA; -fx-padding: 0 0 0 20;" />
+                <TextField alignment="CENTER_RIGHT" editable="false" focusTraversable="false" layoutX="24.0" layoutY="67.0" prefHeight="25.0" prefWidth="98.0" style="-fx-font-weight: bold; -fx-font-family: calibri; -fx-padding: 0; -fx-background-color: transparent; -fx-font-size: 19px;" text="Host Name:" />
+                <TextField fx:id="add_hName" layoutX="128.0" layoutY="67.0" minHeight="30.0" prefHeight="30.0" prefWidth="131.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #AAAAAA;" />
+                <TextField editable="false" focusTraversable="false" layoutX="27.0" layoutY="103.0" prefHeight="25.0" prefWidth="121.0" style="-fx-font-weight: bold; -fx-font-family: calibri; -fx-padding: 0; -fx-background-color: transparent; -fx-font-size: 19px;" text="Authentication" />
+                <AnchorPane fx:id="passwordBox" layoutX="16.0" layoutY="135.0" prefHeight="104.0" prefWidth="536.0" style="-fx-background-color: transparent; -fx-border-color: #AAAAAA;">
+                   <children>
+                      <ImageView fitHeight="22.0" fitWidth="98.0" layoutX="49.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+                      <RadioButton fx:id="add_radio_pw" layoutX="14.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#handleRadioButton" onMousePressed="#handleRadioButton" selected="true" style="-fx-font-family: calibri; -fx-padding: 0; -fx-background-color: transparent; -fx-font-size: 19px;" text="Password" />
+                      <TextField fx:id="add_pwText" editable="false" focusTraversable="false" layoutX="57.0" layoutY="54.0" prefHeight="25.0" prefWidth="88.0" style="-fx-font-weight: bold; -fx-font-family: calibri; -fx-padding: 0; -fx-background-color: transparent; -fx-font-size: 19px;" text="Password:" />
+                      <Rectangle fx:id="add_coverPW" arcHeight="5.0" arcWidth="5.0" fill="#dddddd" height="99.0" layoutX="-2.0" layoutY="3.0" stroke="#aaaaaa" strokeType="INSIDE" style="-fx-opacity: 0.9;" visible="false" width="534.0" />
+                      <PasswordField fx:id="add_pw" layoutX="145.0" layoutY="52.0" minHeight="30.0" prefWidth="186.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #AAAAAA;" />
+                   </children>
+                </AnchorPane>
+                <AnchorPane fx:id="keyBox" layoutX="16.0" layoutY="238.0" prefHeight="137.0" prefWidth="534.0" style="-fx-background-color: transparent; -fx-border-color: #AAAAAA;">
+                   <children>
+                      <ImageView fitHeight="22.0" fitWidth="98.0" layoutX="49.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+                      <RadioButton fx:id="add_radio_privKey" layoutX="14.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#handleRadioButton" onMousePressed="#handleRadioButton" style="-fx-font-family: calibri; -fx-padding: 0; -fx-background-color: transparent; -fx-font-size: 19px;" text="Private Key" />
+                      <TextField fx:id="add_privateKeyText" disable="true" editable="false" focusTraversable="false" layoutX="38.0" layoutY="52.0" prefHeight="25.0" prefWidth="131.0" style="-fx-font-weight: bold; -fx-font-family: calibri; -fx-padding: 0; -fx-background-color: transparent; -fx-font-size: 19px;" text="SSH Private Key:" />
+                      <TextField fx:id="add_privateKey" disable="true" layoutX="169.0" layoutY="49.0" minHeight="30.0" prefHeight="30.0" prefWidth="226.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #AAAAAA;" />
+                      <Button fx:id="GenAndSaveBtn" disable="true" graphicTextGap="0.0" layoutX="380.0" layoutY="89.0" minHeight="21.0" mnemonicParsing="false" onAction="#keyGenWindow" prefHeight="35.0" prefWidth="142.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #AAAAAA; -fx-padding: 0px;" text="Generate &amp; Save key" />
+                      <Button layoutX="393.0" layoutY="35.0" mnemonicParsing="false" style="-fx-padding: 0; -fx-background-color: transparent;" />
+                      <ImageView fx:id="folderImg" fitHeight="26.0" fitWidth="26.0" focusTraversable="true" layoutX="401.0" layoutY="51.0" onMouseClicked="#handleChooseFile" onMousePressed="#handleChooseFile">
+                         <image>
+                            <Image url="@../pngwing.com%20(6).png" />
+                         </image>
+                      </ImageView>
+                      <Rectangle fx:id="add_coverPrivKey" arcHeight="5.0" arcWidth="5.0" fill="#dddddd" height="138.0" layoutY="-2.0" stroke="#aaaaaa" strokeType="INSIDE" style="-fx-opacity: 0.9;" visible="false" width="534.0" />
+                      <TextField fx:id="add_passphraseText" disable="true" editable="false" focusTraversable="false" layoutX="38.0" layoutY="95.0" prefHeight="25.0" prefWidth="98.0" style="-fx-font-weight: bold; -fx-font-family: calibri; -fx-padding: 0; -fx-background-color: transparent; -fx-font-size: 19px;" text="Passphrase:" />
+                      <PasswordField fx:id="add_passphrase" disable="true" layoutX="136.0" layoutY="93.0" prefHeight="30.0" prefWidth="226.0" />
+                   </children>
+                </AnchorPane>
+                <CheckBox fx:id="checkbx_SaveConn" layoutX="159.0" layoutY="394.0" mnemonicParsing="false" text="Save Connection Details" />
+                <Button fx:id="connectBtn" defaultButton="true" graphicTextGap="0.0" layoutX="400.0" layoutY="389.0" mnemonicParsing="false" onAction="#connectManager" prefHeight="30.0" prefWidth="77.0" style="-fx-font-family: calibri; -fx-background-color: #FFFFFF; -fx-border-color: #AAAAAA; -fx-font-size: 18px; -fx-padding: 0px;" text="Connect" />
+                <Button fx:id="cancelBtn" graphicTextGap="0.0" layoutX="484.0" layoutY="390.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="30.0" prefWidth="77.0" style="-fx-font-family: calibri; -fx-background-color: #FFFFFF; -fx-border-color: #AAAAAA; -fx-font-size: 18px; -fx-padding: 0px;" text="Cancel" />
+                <TextField alignment="CENTER_RIGHT" editable="false" focusTraversable="false" layoutX="400.0" layoutY="15.0" prefHeight="25.0" prefWidth="42.0" style="-fx-font-weight: bold; -fx-font-family: calibri; -fx-padding: 0; -fx-background-color: transparent; -fx-font-size: 19px;" text="Port:" />
+                <TextField fx:id="add_port" layoutX="448.0" layoutY="15.0" minHeight="30.0" prefHeight="30.0" prefWidth="69.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #AAAAAA;" text="22" />
+                <TextField alignment="CENTER_RIGHT" editable="false" focusTraversable="false" layoutX="304.0" layoutY="67.0" prefHeight="25.0" prefWidth="98.0" style="-fx-font-weight: bold; -fx-font-family: calibri; -fx-padding: 0; -fx-background-color: transparent; -fx-font-size: 19px;" text="Username:" />
+                <TextField fx:id="add_uName" layoutX="408.0" layoutY="67.0" minHeight="30.0" prefHeight="30.0" prefWidth="131.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #AAAAAA;" />
+                <Button fx:id="saveChangesBtn" defaultButton="true" graphicTextGap="0.0" layoutX="421.0" layoutY="390.0" mnemonicParsing="false" onAction="#saveChanges" prefHeight="30.0" prefWidth="131.0" style="-fx-font-family: calibri; -fx-background-color: #FFFFFF; -fx-border-color: #AAAAAA; -fx-font-size: 18px; -fx-padding: 0px;" text="Save Changes" visible="false" />
+             </children>
+          </AnchorPane>
+            <AnchorPane fx:id="a_createp2pServer" layoutX="233.0" layoutY="98.0" prefHeight="428.0" prefWidth="672.0" style="-fx-background-color: #cce6ff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="234.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="98.0">
+               <children>
+                  <TextField alignment="CENTER_RIGHT" editable="false" focusTraversable="false" layoutX="73.0" layoutY="108.0" prefHeight="25.0" prefWidth="98.0" style="-fx-font-weight: bold; -fx-font-family: calibri; -fx-padding: 0; -fx-background-color: transparent; -fx-font-size: 19px;" text="Server IP:" />
+                  <TextField fx:id="p2pServerIP" layoutX="177.0" layoutY="108.0" minHeight="30.0" prefHeight="30.0" prefWidth="165.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #AAAAAA;" />
+                  <Button fx:id="connectBtn1" defaultButton="true" graphicTextGap="0.0" layoutX="356.0" layoutY="389.0" mnemonicParsing="false" onAction="#startP2PServer" prefHeight="30.0" prefWidth="121.0" style="-fx-font-family: calibri; -fx-background-color: #FFFFFF; -fx-border-color: #AAAAAA; -fx-font-size: 18px; -fx-padding: 0px;" text="Start Server" />
+                  <Button fx:id="cancelBtn1" graphicTextGap="0.0" layoutX="484.0" layoutY="390.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="30.0" prefWidth="77.0" style="-fx-font-family: calibri; -fx-background-color: #FFFFFF; -fx-border-color: #AAAAAA; -fx-font-size: 18px; -fx-padding: 0px;" text="Cancel" />
+                  <TextField alignment="CENTER_RIGHT" editable="false" focusTraversable="false" layoutX="129.0" layoutY="184.0" prefHeight="25.0" prefWidth="42.0" style="-fx-font-weight: bold; -fx-font-family: calibri; -fx-padding: 0; -fx-background-color: transparent; -fx-font-size: 19px;" text="Port:" />
+                  <TextField fx:id="p2pServerPort" layoutX="177.0" layoutY="184.0" minHeight="30.0" prefHeight="30.0" prefWidth="69.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #AAAAAA;" text="1024" />
+                  <Button fx:id="saveChangesBtn1" defaultButton="true" graphicTextGap="0.0" layoutX="421.0" layoutY="390.0" mnemonicParsing="false" onAction="#saveChanges" prefHeight="30.0" prefWidth="131.0" style="-fx-font-family: calibri; -fx-background-color: #FFFFFF; -fx-border-color: #AAAAAA; -fx-font-size: 18px; -fx-padding: 0px;" text="Save Changes" visible="false" />
+                  <TextField fx:id="add_pwText1" editable="false" focusTraversable="false" layoutX="85.0" layoutY="270.0" prefHeight="25.0" prefWidth="88.0" style="-fx-font-weight: bold; -fx-font-family: calibri; -fx-padding: 0; -fx-background-color: transparent; -fx-font-size: 19px;" text="Password:" />
+                  <PasswordField fx:id="p2pServerPassword" layoutX="177.0" layoutY="267.0" minHeight="30.0" prefHeight="30.0" prefWidth="165.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #AAAAAA;" />
+               </children>
+            </AnchorPane>
+          <AnchorPane fx:id="a_terminal" layoutX="234.0" layoutY="98.0" prefHeight="428.0" prefWidth="566.0" style="-fx-background-color: #cce6ff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="234.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="98.0">
+             <children>
+                <TextArea fx:id="textArea_terminalOut" editable="false" prefHeight="315.0" prefWidth="566.0" styleClass="terminal" stylesheets="@applicationCSS.css" AnchorPane.bottomAnchor="113.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                   <font>
+                      <Font name="Monospaced Regular" size="16.0" />
+                   </font>
+                </TextArea>
+                <TextArea fx:id="textArea_terminal" layoutY="314.0" onKeyPressed="#detectEnter" prefHeight="55.0" prefWidth="584.0" promptText="Enter Command Here" AnchorPane.bottomAnchor="59.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="88.0">
+                   <font>
+                      <Font name="Monospaced Regular" size="16.0" />
+                   </font>
+                </TextArea>
+                <Button fx:id="button_execute" defaultButton="true" layoutX="477.0" layoutY="314.0" mnemonicParsing="false" onAction="#executeCommand" prefHeight="55.0" prefWidth="88.0" text="Execute" AnchorPane.bottomAnchor="59.0" AnchorPane.rightAnchor="0.0">
+                   <font>
+                      <Font name="System Bold" size="16.0" />
+                   </font>
+                </Button>
+                <CheckBox fx:id="check_executeWithEnter" layoutX="14.0" layoutY="404.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="121.0" selected="true" text="Execute with Enter" AnchorPane.bottomAnchor="7.0" />
+                <Button fx:id="button_clearTerminal" layoutX="135.0" layoutY="399.0" mnemonicParsing="false" onAction="#terminalClear" prefHeight="27.0" prefWidth="131.0" text="Clear Terminal" AnchorPane.bottomAnchor="2.0" />
+                <Button fx:id="button_endConnection" layoutX="283.0" layoutY="399.0" mnemonicParsing="false" onAction="#terminateConnection" prefHeight="27.0" prefWidth="131.0" text="End Connection" AnchorPane.bottomAnchor="2.0" />
+                <Button fx:id="sftpTransferButton" disable="true" layoutX="428.0" layoutY="399.0" mnemonicParsing="false" onAction="#sftpTransfer" prefHeight="27.0" prefWidth="131.0" text="SFTP Transfer" visible="false" AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="113.0" />
+                  <Button fx:id="button_endServer" layoutX="428.0" layoutY="399.0" mnemonicParsing="false" onAction="#terminateP2PServer" prefHeight="27.0" prefWidth="98.0" text="End Server" AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="146.0" />
+                  <Button fx:id="button_restartServer" layoutX="535.0" layoutY="399.0" mnemonicParsing="false" onAction="#restartP2PServer" prefHeight="31.0" prefWidth="116.0" text="Restart Server" AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="21.0" />
+                  <ComboBox fx:id="historyCombo" layoutX="-2.0" layoutY="369.0" onAction="#detectHistory" prefHeight="25.0" prefWidth="672.0" promptText="History" AnchorPane.bottomAnchor="28.0" />
+             </children>
+          </AnchorPane>
+          <AnchorPane fx:id="a_transfer" layoutX="180.0" layoutY="155.0" prefHeight="270.0" prefWidth="550.0" style="-fx-background-color: #dddddd; -fx-border-color: #AAAAAA;" visible="false">
+             <children>
+                <TextField editable="false" focusTraversable="false" mouseTransparent="true" prefHeight="45.0" prefWidth="550.0" style="-fx-padding: 0 0 0 20; -fx-font-family: calibri; -fx-font-size: 20px; -fx-background-color: #FFFFFF;" text="SFTP Transfer" />
+                <Button fx:id="startTransfer" layoutX="194.0" layoutY="221.0" mnemonicParsing="false" onAction="#startSFTPTransfer" prefHeight="35.0" prefWidth="162.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #cccccc;" text="START TRANSFER" />
+                <ComboBox fx:id="c_sftpTransferType" layoutX="150.0" layoutY="58.0" prefWidth="150.0" />
+                <Label focusTraversable="false" layoutX="19.0" layoutY="57.0" mouseTransparent="true" prefHeight="27.0" prefWidth="131.0" text="Transfer Type:">
+                   <font>
+                      <Font name="Calibri" size="20.0" />
+                   </font>
+                   <padding>
+                      <Insets left="5.0" />
+                   </padding>
+                </Label>
+                <Group layoutX="19.0" layoutY="90.0">
+                   <children>
+                      <Label focusTraversable="false" layoutX="1.0" mouseTransparent="true" prefHeight="27.0" prefWidth="131.0" text="Local:">
+                         <font>
+                            <Font name="Calibri Bold" size="20.0" />
+                         </font>
+                         <padding>
+                            <Insets left="5.0" />
+                         </padding>
+                      </Label>
+                      <Label focusTraversable="false" layoutX="261.0" layoutY="34.0" mouseTransparent="true" prefHeight="27.0" prefWidth="98.0" text="File name:">
+                         <font>
+                            <Font name="Calibri" size="20.0" />
+                         </font>
+                         <padding>
+                            <Insets left="5.0" />
+                         </padding>
+                      </Label>
+                      <TextField fx:id="localFilename" layoutX="352.0" layoutY="33.0">
+                         <font>
+                            <Font size="13.0" />
+                         </font>
+                      </TextField>
+                      <Label focusTraversable="false" layoutY="63.0" mouseTransparent="true" prefHeight="27.0" prefWidth="131.0" text="Remote:">
+                         <font>
+                            <Font name="Calibri Bold" size="20.0" />
+                         </font>
+                         <padding>
+                            <Insets left="5.0" />
+                         </padding>
+                      </Label>
+                      <Label focusTraversable="false" layoutY="91.0" mouseTransparent="true" prefHeight="27.0" prefWidth="98.0" text="Directory:">
+                         <font>
+                            <Font name="Calibri" size="20.0" />
+                         </font>
+                         <padding>
+                            <Insets left="5.0" />
+                         </padding>
+                      </Label>
+                      <TextField fx:id="remoteDirectory" layoutX="91.0" layoutY="90.0">
+                         <font>
+                            <Font size="13.0" />
+                         </font>
+                      </TextField>
+                      <Label focusTraversable="false" layoutX="261.0" layoutY="91.0" mouseTransparent="true" prefHeight="27.0" prefWidth="98.0" text="File name:">
+                         <font>
+                            <Font name="Calibri" size="20.0" />
+                         </font>
+                         <padding>
+                            <Insets left="5.0" />
+                         </padding>
+                      </Label>
+                      <TextField fx:id="remoteFilename" layoutX="352.0" layoutY="90.0">
+                         <font>
+                            <Font size="13.0" />
+                         </font>
+                      </TextField>
+                      <Button layoutX="78.0" mnemonicParsing="false" onAction="#chooseLocalSFTPDirectory" prefHeight="19.0" prefWidth="187.0" text="Choose Local Directory">
+                         <font>
+                            <Font name="Calibri" size="15.0" />
+                         </font>
+                      </Button>
+                      <Label focusTraversable="false" layoutY="34.0" mouseTransparent="true" prefHeight="27.0" prefWidth="98.0" text="Directory:">
+                         <font>
+                            <Font name="Calibri" size="20.0" />
+                         </font>
+                         <padding>
+                            <Insets left="5.0" />
+                         </padding>
+                      </Label>
+                      <TextField fx:id="localDirectory" editable="false" layoutX="91.0" layoutY="33.0">
+                         <font>
+                            <Font size="13.0" />
+                         </font>
+                      </TextField>
+                   </children>
+                </Group>
+                <Button fx:id="cancelTransferButton" layoutX="371.0" layoutY="221.0" mnemonicParsing="false" onAction="#cancelTransfer" prefHeight="35.0" prefWidth="162.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #cccccc;" text="CANCEL" />
+             </children>
+          </AnchorPane>
+          <AnchorPane fx:id="a_SSHKeyGen" layoutX="190.0" layoutY="165.0" prefHeight="270.0" prefWidth="550.0" style="-fx-background-color: #dddddd; -fx-border-color: #AAAAAA;" visible="false">
+             <children>
+                <TextField editable="false" focusTraversable="false" mouseTransparent="true" prefHeight="45.0" prefWidth="550.0" style="-fx-padding: 0 0 0 20; -fx-font-family: calibri; -fx-font-size: 20px; -fx-background-color: #FFFFFF;" text="SSH Keygen" />
+                <Button fx:id="startTransfer1" layoutX="194.0" layoutY="221.0" mnemonicParsing="false" onAction="#doKeyGen" prefHeight="35.0" prefWidth="162.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #cccccc;" text="GENERATE KEY" />
+                <Group layoutX="116.0" layoutY="75.0" />
+                <Button fx:id="cancelTransferButton1" layoutX="371.0" layoutY="221.0" mnemonicParsing="false" onAction="#cancelKeygen" prefHeight="35.0" prefWidth="162.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #cccccc;" text="CANCEL" />
+                <Label focusTraversable="false" layoutX="17.0" layoutY="76.0" mouseTransparent="true" prefHeight="27.0" prefWidth="165.0" text="Key Save Location:">
+                   <font>
+                      <Font name="Calibri" size="20.0" />
+                   </font>
+                   <padding>
+                      <Insets left="5.0" />
+                   </padding>
+                </Label>
+                <Label focusTraversable="false" layoutX="17.0" layoutY="136.0" mouseTransparent="true" prefHeight="27.0" prefWidth="98.0" text="File name:">
+                   <font>
+                      <Font name="Calibri" size="20.0" />
+                   </font>
+                   <padding>
+                      <Insets left="5.0" />
+                   </padding>
+                </Label>
+                <Button layoutX="182.0" layoutY="76.0" mnemonicParsing="false" onAction="#chooseKeySaveDirectory" prefHeight="28.0" prefWidth="108.0" text="Save Key As">
+                   <font>
+                      <Font name="Calibri" size="15.0" />
+                   </font>
+                </Button>
+                <TextField fx:id="keyFileName" layoutX="114.0" layoutY="135.0" prefHeight="29.0" prefWidth="107.0" text="id_rsa">
+                   <font>
+                      <Font size="13.0" />
+                   </font>
+                </TextField>
+                <Label focusTraversable="false" layoutX="227.0" layoutY="136.0" mouseTransparent="true" prefHeight="27.0" prefWidth="207.0" text="Passphrase (optional):">
+                   <font>
+                      <Font name="Calibri" size="20.0" />
+                   </font>
+                   <padding>
+                      <Insets left="5.0" />
+                   </padding>
+                </Label>
+                <TextField fx:id="keySaveDirectory" editable="false" layoutX="303.0" layoutY="76.0" prefHeight="29.0" prefWidth="236.0">
+                   <font>
+                      <Font size="13.0" />
+                   </font>
+                </TextField>
+                <PasswordField fx:id="keyPassphrase" layoutX="417.0" layoutY="137.0" prefHeight="25.0" prefWidth="116.0" />
+             </children>
+          </AnchorPane>
+          <AnchorPane fx:id="a_cancelAddConChangeTab" layoutX="170.0" layoutY="145.0" prefHeight="270.0" prefWidth="550.0" style="-fx-background-color: #dddddd; -fx-border-color: #AAAAAA;" visible="false">
+               <children>
+                  <TextField editable="false" focusTraversable="false" mouseTransparent="true" prefHeight="45.0" prefWidth="550.0" style="-fx-padding: 0 0 0 20; -fx-font-family: calibri; -fx-font-size: 20px; -fx-background-color: #FFFFFF;" text="Cancel Adding Connection" />
+                  <TextField editable="false" focusTraversable="false" layoutX="93.0" layoutY="69.0" mouseTransparent="true" prefHeight="26.0" prefWidth="328.0" style="-fx-padding: 0; -fx-font-family: calibri; -fx-font-size: 20px; -fx-background-color: transparent;" text="Are you sure you want to quit adding" />
+                  <Button layoutX="124.0" layoutY="180.0" mnemonicParsing="false" onAction="#handleYesButton" prefHeight="33.0" prefWidth="88.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #cccccc;" text="Yes" />
+                  <TextField editable="false" focusTraversable="false" layoutX="93.0" layoutY="98.0" mouseTransparent="true" prefHeight="26.0" prefWidth="345.0" style="-fx-padding: 0; -fx-font-family: calibri; -fx-font-size: 20px; -fx-background-color: transparent;" text="connection and move on to another tab?" />
+                  <TextField editable="false" focusTraversable="false" layoutX="93.0" layoutY="124.0" mouseTransparent="true" prefHeight="26.0" prefWidth="345.0" style="-fx-padding: 0; -fx-font-family: calibri; -fx-font-size: 20px; -fx-background-color: transparent;" text="All unsaved changes will be lost." />
+                  <Button layoutX="315.0" layoutY="180.0" mnemonicParsing="false" onAction="#handleNoButton" prefHeight="33.0" prefWidth="88.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #cccccc;" text="No" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="a_connectionLoading" layoutX="290.0" layoutY="170.0" prefHeight="188.0" prefWidth="451.0" style="-fx-background-color: #dddddd;" visible="false">
+               <children>
+                  <ProgressBar fx:id="pBar_load" layoutX="76.0" layoutY="94.0" prefHeight="23.0" prefWidth="300.0" progress="0.0" />
+                  <TextField editable="false" focusTraversable="false" mouseTransparent="true" prefHeight="45.0" prefWidth="451.0" style="-fx-padding: 0 0 0 20; -fx-font-family: calibri; -fx-font-size: 20px; -fx-background-color: #FFFFFF;" text="Connection" />
+                  <TextField editable="false" focusTraversable="false" layoutX="168.0" layoutY="62.0" mouseTransparent="true" prefHeight="32.0" prefWidth="116.0" style="-fx-padding: 0; -fx-font-family: calibri; -fx-font-size: 20px; -fx-background-color: transparent;" text="Connecting..." />
+                  <Button layoutX="180.0" layoutY="135.0" mnemonicParsing="false" onAction="#handleOkButton" text="Close Dialog" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="a_errorDialog" layoutX="175.0" layoutY="145.0" prefHeight="270.0" prefWidth="550.0" style="-fx-background-color: #dddddd; -fx-border-color: #AAAAAA;" visible="false">
+               <children>
+                  <TextField fx:id="errDialog_title" editable="false" focusTraversable="false" mouseTransparent="true" prefHeight="45.0" prefWidth="550.0" style="-fx-padding: 0 0 0 20; -fx-font-family: calibri; -fx-font-size: 20px; -fx-background-color: #FFFFFF;" />
+                  <TextField fx:id="errDialog_txt1" alignment="CENTER" editable="false" focusTraversable="false" layoutX="8.0" layoutY="62.0" mouseTransparent="true" prefHeight="32.0" prefWidth="534.0" style="-fx-padding: 0; -fx-font-family: calibri; -fx-font-size: 20px; -fx-background-color: transparent;" />
+                  <TextField fx:id="errDialog_txt2" alignment="CENTER" editable="false" focusTraversable="false" layoutX="8.0" layoutY="94.0" mouseTransparent="true" prefHeight="32.0" prefWidth="534.0" style="-fx-padding: 0; -fx-font-family: calibri; -fx-font-size: 20px; -fx-background-color: transparent;" />
+                  <TextField fx:id="errDialog_txt3" alignment="CENTER" editable="false" focusTraversable="false" layoutX="8.0" layoutY="126.0" mouseTransparent="true" prefHeight="32.0" prefWidth="534.0" style="-fx-padding: 0; -fx-font-family: calibri; -fx-font-size: 20px; -fx-background-color: transparent;" />
+                  <Button layoutX="223.0" layoutY="183.0" mnemonicParsing="false" onAction="#handleOkButton" prefHeight="33.0" prefWidth="88.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #cccccc;" text="OK" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="a_infoDialog" layoutX="175.0" layoutY="145.0" prefHeight="270.0" prefWidth="550.0" style="-fx-background-color: #dddddd; -fx-border-color: #AAAAAA;" visible="false">
+               <children>
+                  <TextField fx:id="infDialog_title" editable="false" focusTraversable="false" mouseTransparent="true" prefHeight="45.0" prefWidth="550.0" style="-fx-padding: 0 0 0 20; -fx-font-family: calibri; -fx-font-size: 20px; -fx-background-color: #FFFFFF;" />
+                  <TextField fx:id="infDialog_txt1" alignment="CENTER" editable="false" focusTraversable="false" layoutX="8.0" layoutY="62.0" mouseTransparent="true" prefHeight="32.0" prefWidth="534.0" style="-fx-padding: 0; -fx-font-family: calibri; -fx-font-size: 20px; -fx-background-color: transparent;" />
+                  <TextField fx:id="infDialog_txt2" alignment="CENTER" editable="false" focusTraversable="false" layoutX="8.0" layoutY="94.0" mouseTransparent="true" prefHeight="32.0" prefWidth="534.0" style="-fx-padding: 0; -fx-font-family: calibri; -fx-font-size: 20px; -fx-background-color: transparent;" />
+                  <TextField fx:id="infDialog_txt3" alignment="CENTER" editable="false" focusTraversable="false" layoutX="8.0" layoutY="126.0" mouseTransparent="true" prefHeight="32.0" prefWidth="534.0" style="-fx-padding: 0; -fx-font-family: calibri; -fx-font-size: 20px; -fx-background-color: transparent;" />
+                  <Button layoutX="223.0" layoutY="183.0" mnemonicParsing="false" onAction="#handleOkButton" prefHeight="33.0" prefWidth="88.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #cccccc;" text="OK" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="a_confirmDialog" layoutX="185.0" layoutY="155.0" prefHeight="270.0" prefWidth="550.0" style="-fx-background-color: #dddddd; -fx-border-color: #AAAAAA;" visible="false">
+               <children>
+                  <TextField fx:id="cfmDialog_title" editable="false" focusTraversable="false" mouseTransparent="true" prefHeight="45.0" prefWidth="550.0" style="-fx-padding: 0 0 0 20; -fx-font-family: calibri; -fx-font-size: 20px; -fx-background-color: #FFFFFF;" />
+                  <TextField fx:id="cfmDialog_txt1" alignment="CENTER" editable="false" focusTraversable="false" layoutX="8.0" layoutY="62.0" mouseTransparent="true" prefHeight="32.0" prefWidth="534.0" style="-fx-padding: 0; -fx-font-family: calibri; -fx-font-size: 20px; -fx-background-color: transparent;" />
+                  <TextField fx:id="cfmDialog_txt2" alignment="CENTER" editable="false" focusTraversable="false" layoutX="8.0" layoutY="94.0" mouseTransparent="true" prefHeight="32.0" prefWidth="534.0" style="-fx-padding: 0; -fx-font-family: calibri; -fx-font-size: 20px; -fx-background-color: transparent;" />
+                  <TextField fx:id="cfmDialog_txt3" alignment="CENTER" editable="false" focusTraversable="false" layoutX="8.0" layoutY="126.0" mouseTransparent="true" prefHeight="32.0" prefWidth="534.0" style="-fx-padding: 0; -fx-font-family: calibri; -fx-font-size: 20px; -fx-background-color: transparent;" />
+                  <Button layoutX="96.0" layoutY="196.0" mnemonicParsing="false" onAction="#handleYesButton" prefHeight="33.0" prefWidth="88.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #cccccc;" text="Yes" />
+                  <Button layoutX="364.0" layoutY="196.0" mnemonicParsing="false" onAction="#handleNoButton" prefHeight="33.0" prefWidth="88.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #cccccc;" text="No" />
+               </children>
+            </AnchorPane>
+        </children>
+    </AnchorPane>
+   </children>
+</AnchorPane>
