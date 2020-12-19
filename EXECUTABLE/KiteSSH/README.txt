@@ -17,15 +17,15 @@ GROUP: FYP-20-S3-10 - EFFICIENT SSH TUNNELING
 
 MEMBERS:
 
-	Fratini Luca Project Manager lucafratini94@gmail.com
+	Fratini Luca Project Manager
 	Maurice Rizat Kasomwung Backend Programmer mauricerizat@gmail.com
-	Lim Wei Zhi Maximillian Frontend Programmer azure.marine1@gmail.com
-	Chua Man Fu UI/UX Designer manfularry35@gmail.com
-	Pang Chun Weng Software Tester pangchunweng1993@gmail.com
+	Lim Wei Zhi Maximillian Frontend Programmer
+	Chua Man Fu UI/UX Designer
+	Pang Chun Weng Software Tester
 
 
-SUPERVISOR: Japit Sionggo
-ASSESSOR: Tian Sion Hui
+SUPERVISOR:
+ASSESSOR:
 
 VERSION: 1.0
 DATE: November 2020
