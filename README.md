@@ -34,9 +34,11 @@ _Some personal information on the individuals involved in this project is not di
 This KiteSSH Application is meant for Microsoft Windows operating systems. Windows 10 1089 or above is recommended.
 
 Java Runtime Environment (Minimum Version 1.8.0) is required to run the application.
+
+KiteSSH uses JCraft's JSch library [http://www.jcraft.com/jsch/] to handle its SSH, SCP and SFTP functinalities. This is bundled with the application and can be found in the **lib** subfolder.
 ***
 ### USE
-Download executable folder and run **KiteSSH.exe** located within the sub-folder KiteSSH. It is important that the contents of the directory KiteSSH remain unchanged relative to each other to ensure the program runs as intended.
+Download executable folder and run **KiteSSH.exe** located within the sub-folder **KiteSSH**. It is important that the contents of the directory KiteSSH remain unchanged relative to each other to ensure the program runs as intended.
 
 Below is a brief instructional video outlining the basic uses of KiteSSH.
 
